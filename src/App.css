@@ -1,42 +1,140 @@
-#root {
-  max-width: 1280px;
+/* Light, clean palette */
+:root{
+  --bg: #ffffff;
+  --ink: #111827;        /* near-black text */
+  --muted: #6b7280;      /* gray text */
+  --border: #e5e7eb;     /* light gray lines */
+  --accent: #c8a46a;     /* sand/gold accent */
+  --card: #ffffff;
+  --shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+* { box-sizing: border-box; }
+
+.page {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+.container {
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  padding: 32px 16px 48px;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.h1 {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0 0 6px 0;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.sub {
+  margin: 0 0 20px 0;
+  color: var(--muted);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* Horizontal timeline track: the only scrollbar */
+.track {
+  position: relative;
+  border-top: 2px solid var(--border);
+  overflow-x: auto;           /* horizontal scroll */
+  overflow-y: visible;        /* allow cards to pop above */
+  white-space: nowrap;
+  padding: 44px 8px 54px;     /* space for cards above and below the line */
+  scrollbar-gutter: stable;
 }
 
+/* Each node along the line */
+.node {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 220px;               /* spacing between nodes */
+  height: 0;                  /* we only show the line; cards are absolutely positioned */
+}
+
+/* Year label above the line */
+.year {
+  position: absolute;
+  top: -32px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+/* Dot on the line */
+.dot {
+  position: absolute;
+  top: -6px;                  /* centered on the border-top line */
+  width: 12px;
+  height: 12px;
+  background: var(--bg);
+  border: 2px solid var(--accent);
+  border-radius: 999px;
+  box-shadow: 0 0 0 3px var(--bg); /* ring to separate from the line */
+}
+
+/* Hover card */
 .card {
-  padding: 2em;
+  position: absolute;
+  top: 18px;                  /* appears below the line; change to -190px to show above */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 240px;               /* skinny cards */
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  overflow: hidden;           /* ensures image fits the card */
+  pointer-events: none;       /* purely hover display; no click required */
 }
 
-.read-the-docs {
-  color: #888;
+/* Image fits the card without overflow */
+.cardImageWrap {
+  width: 100%;
+  height: 120px;
+  background: #f3f4f6;
+  border-bottom: 1px solid var(--border);
 }
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;        /* fits into the image area cleanly */
+  display: block;
+}
+
+.cardBody {
+  padding: 12px 12px 14px;
+}
+
+.cardTitle {
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+
+.cardSub {
+  font-size: 12px;
+  color: var(--muted);
+  margin-bottom: 8px;
+}
+
+.cardText {
+  font-size: 12px;
+  color: #374151;
+  margin: 0;
+}
+
+/* Smooth scrolling on track for better feel */
+.track {
+  scroll-behavior: smooth;
+}
+
+/* Optional: nicer scrollbar on Chromium */
+.track::-webkit-scrollbar { height: 10px; }
+.track::-webkit-scrollbar-track { background: #f3f4f6; }
+.track::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 999px; }
+.track::-webkit-scrollbar-thumb:hover { background: #bfc5cd; }
