@@ -12,7 +12,7 @@ const items = [
 
 export default function App() {
   return (
-    <div style={{ minHeight: "100vh", background: "#111111", color: "#edeef1" }}>
+    <div style={{ minHeight: "100vh", background: "#ffffff", color: "#edeef1" }}>
       <div style={{ maxWidth: 1000, margin: "0 auto", padding: "32px 16px" }}>
         <h1 style={{ fontSize: 24, fontWeight: 600, marginBottom: 8 }}>
           My VALORANT Journey
