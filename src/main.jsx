@@ -4,3 +4,4 @@ import App from "./App.jsx";
 import "./index.css"; // or "./App.css"
 
 ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+
