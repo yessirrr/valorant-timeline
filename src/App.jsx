@@ -64,7 +64,7 @@ export default function App() {
         <div style={{ height: 640 }}>
           <Chrono
             items={items}
-            mode="VERTICAL_ALTERNATING"
+            mode="HORIZONTAL_ALTERNATING"
             scrollable={{ scrollbar: true }}
             cardHeight={190}
             theme={{
