@@ -1,27 +1,13 @@
 // src/App.jsx
 import { Chrono } from "react-chrono";
 
-
 const items = [
-  {
-    title: "2020",
-    cardTitle: "Started playing VALORANT",
-    cardSubtitle: "Episode 1",
-    cardDetailedText: "Hooked on tactical depth and teamplay.",
-  },
-  {
-    title: "2021",
-    cardTitle: "First Radiant",
-    cardSubtitle: "While studying Chemical Engineering",
-    cardDetailedText:
-      "Discipline + systems thinking carried over from coursework and practice routines.",
-    media: {
-      type: "IMAGE",
-      source: {
-        url: "https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/27.png",
-      },
-    },
-  },
+  { title: "2020", cardTitle: "Started playing VALORANT", cardSubtitle: "Episode 1", cardDetailedText: "Hooked on tactical depth and teamplay." },
+  { title: "2021", cardTitle: "First Radiant", cardSubtitle: "While studying Chemical Engineering", cardDetailedText:"Discipline + systems thinking from coursework and practice.", media:{ type:"IMAGE", source:{ url:"https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/27.png" } } },
+  { title: "2022", cardTitle: "Joined Collegiate Team (UBC)", cardDetailedText:"Structured comms, IGL habits, role synergy." },
+  { title: "2023", cardTitle: "TC Energy Internship", cardDetailedText:"Balanced high-level play with full-time work; sharpened iteration habits." },
+  { title: "2024", cardTitle: "Attended VCT Masters Toronto", cardSubtitle:"With friends (some new to VALORANT)", cardDetailedText:"Inspired my Fantasy League case study.", media:{ type:"IMAGE", source:{ url:"https://trackercdn.com/cdn/tracker.gg/valorant/icons/tiersv2/27.png" } } },
+  { title: "2025", cardTitle: "Riot-focused Portfolio", cardDetailedText:"Practice Range redesign + Fantasy League UI (Premier-inspired)." },
 ];
 
 export default function App() {
@@ -53,34 +39,6 @@ export default function App() {
           />
         </div>
       </div>
-    </div>
-  );
-}
-
-      {/* Tiny CSS tweaks to compress spacing & dots */}
-      <style>{`
-        /* shrink the timeline dots & lines a bit */
-        .chrono-icons {
-          width: 12px !important;
-          height: 12px !important;
-        }
-        .timeline-main-wrapper .timeline-item .timeline-circle {
-          box-shadow: none !important;
-        }
-        /* tighten vertical spacing between items */
-        .timeline-card-content {
-          padding: 10px 12px !important;
-        }
-        .timeline-title {
-          font-size: 14px !important;
-        }
-        .card-title {
-          font-size: 15px !important;
-        }
-        .card-sub-title, .card-text {
-          font-size: 12px !important;
-        }
-      `}</style>
     </div>
   );
 }
